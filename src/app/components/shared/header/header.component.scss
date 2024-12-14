@@ -1,0 +1,10 @@
+.showcase::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}

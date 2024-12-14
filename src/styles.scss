@@ -3,6 +3,39 @@
 @tailwind components;
 @tailwind utilities;
 
+// @import "./scss/colors.scss";
+
+@layer base {
+  :root {
+    --color-primary: 163deg 94% 24%;
+    --color-primary-400: 158deg 64% 52%;
+    --color-primary-200: 152deg 76% 80%;
+
+    --color-secondary: 160deg 84% 39%;
+    --color-danger: 350deg 89% 60%;
+
+    --color-background: 220deg 14% 96%;
+    --color-forground: 0deg 0% 100%;
+    --color-light: 215deg 14% 34%;
+    --color-dark: 217deg 19% 27%;
+  }
+
+  body[data-dark-mode] {
+    --color-background: 221deg 39% 11%;
+    --color-forground: 215deg 28% 17%;
+    --color-light: 210deg 20% 98%;
+    --color-dark: 0deg 0% 100%;
+  }
+}
+
+:root {
+  --primary-color: #4b0005;
+  --secondary-color: #ff4d6d;
+  --light-color: #fff8fc;
+  --neutral-color: #fafafa;
+  --dark-color: #161515;
+}
+
 html,
 body {
   height: 100%;
@@ -10,4 +43,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding-inline: 2em;
 }

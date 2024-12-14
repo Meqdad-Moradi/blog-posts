@@ -1,0 +1,12 @@
+<section
+  class="grid place-items-center pt-28 text-gray-100 text-center relative z-[1]"
+>
+  <h1 class="text-7xl mb-10">{{ title() }}</h1>
+
+  <!-- display showcase -->
+  @if(showcase()){
+  <p class="text-lg max-w-4xl mx-auto leading-8">{{ showcase() }}</p>
+
+  <button class="mt-10" mat-raised-button color="primary">Browse Posts</button>
+  }
+</section>
