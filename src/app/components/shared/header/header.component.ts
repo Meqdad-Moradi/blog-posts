@@ -1,6 +1,6 @@
-import { Component, input } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { Component } from '@angular/core';
 import { ShowcaseComponent } from '../../apps/showcase/showcase.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,4 @@ import { ShowcaseComponent } from '../../apps/showcase/showcase.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-  subMenu = input<boolean>(false);
-}
+export class HeaderComponent {}
