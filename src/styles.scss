@@ -1,14 +1,129 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+// primary color for refrence: #4b0005
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+$custom-theme: mat.define-theme(
+  (
+    color: (
+      use-system-variables: true,
+    ),
+  )
+);
+
 :root {
-  --primary-color: #4b0005;
-  --secondary-color: #ff4d6d;
-  --light-color: #fff8fc;
-  --neutral-color: #fafafa;
-  --dark-color: #161515;
+  color-scheme: light;
+  --mat-sys-primary: rgb(39 0 1);
+  --mat-sys-surface-tint: rgb(160 63 59);
+  --mat-sys-on-primary: rgb(255 255 255);
+  --mat-sys-primary-container: rgb(94, 14, 16);
+  --mat-sys-on-primary-container: rgb(255 163 156);
+  --mat-sys-secondary: rgb(132 81 77);
+  --mat-sys-on-secondary: rgb(255 255 255);
+  --mat-sys-secondary-container: rgb(255 197 192);
+  --mat-sys-on-secondary-container: rgb(94, 50, 47);
+  --mat-sys-tertiary: rgb(23 11 0);
+  --mat-sys-on-tertiary: rgb(255 255 255);
+  --mat-sys-tertiary-container: rgb(64 41 8);
+  --mat-sys-on-tertiary-container: rgb(218 180 136);
+  --mat-sys-error: rgb(186 26 26);
+  --mat-sys-on-error: rgb(255 255 255);
+  --mat-sys-error-container: rgb(255 218 214);
+  --mat-sys-on-error-container: rgb(65 0 2);
+  --mat-sys-background: rgb(255 248 247);
+  --mat-sys-on-background: rgb(35 25 24);
+  --mat-sys-surface: rgb(255 248 247);
+  --mat-sys-on-surface: rgb(35 25 24);
+  --mat-sys-surface-variant: rgb(249 220 217);
+  --mat-sys-on-surface-variant: rgb(86 66 64);
+  --mat-sys-outline: rgb(137 114 111);
+  --mat-sys-outline-variant: rgb(220 192 189);
+  --mat-sys-shadow: rgb(0 0 0);
+  --mat-sys-scrim: rgb(0 0 0);
+  --mat-sys-inverse-surface: rgb(57 46 45);
+  --mat-sys-inverse-on-surface: rgb(255 237 235);
+  --mat-sys-inverse-primary: rgb(255 179 173);
+  --mat-sys-primary-fixed: rgb(255 218 215);
+  --mat-sys-on-primary-fixed: rgb(65 0 4);
+  --mat-sys-primary-fixed-dim: rgb(255 179 173);
+  --mat-sys-on-primary-fixed-variant: rgb(128 39 37);
+  --mat-sys-secondary-fixed: rgb(255 218 215);
+  --mat-sys-on-secondary-fixed: rgb(52 16 14);
+  --mat-sys-secondary-fixed-dim: rgb(248 182 177);
+  --mat-sys-on-secondary-fixed-variant: rgb(104 58 54);
+  --mat-sys-tertiary-fixed: rgb(255 221 183);
+  --mat-sys-on-tertiary-fixed: rgb(42 23 0);
+  --mat-sys-tertiary-fixed-dim: rgb(231 192 147);
+  --mat-sys-on-tertiary-fixed-variant: rgb(92 66 31);
+  --mat-sys-surface-dim: rgb(233 214 212);
+  --mat-sys-surface-bright: rgb(255 248 247);
+  --mat-sys-surface-container-lowest: rgb(255 255 255);
+  --mat-sys-surface-container-low: rgb(255 240 239);
+  --mat-sys-surface-container: rgb(253 234 231);
+  --mat-sys-surface-container-high: rgb(247 228 226);
+  --mat-sys-surface-container-highest: rgb(241 222 220);
+}
+
+.dark {
+  color-scheme: dark;
+  --mat-sys-primary: rgb(255 179 173);
+  --mat-sys-surface-tint: rgb(255 179 173);
+  --mat-sys-on-primary: rgb(98 16 18);
+  --mat-sys-primary-container: rgb(61, 0, 3);
+  --mat-sys-on-primary-container: rgb(249 131 123);
+  --mat-sys-secondary: rgb(248 182 177);
+  --mat-sys-on-secondary: rgb(78 36 33);
+  --mat-sys-secondary-container: rgb(96 51 48);
+  --mat-sys-on-secondary-container: rgb(255 199 194);
+  --mat-sys-tertiary: rgb(231 192 147);
+  --mat-sys-on-tertiary: rgb(67 44 10);
+  --mat-sys-tertiary-container: rgb(38 21 0);
+  --mat-sys-on-tertiary-container: rgb(194 158 115);
+  --mat-sys-error: rgb(255 180 171);
+  --mat-sys-on-error: rgb(105 0 5);
+  --mat-sys-error-container: rgb(147 0 10);
+  --mat-sys-on-error-container: rgb(255 218 214);
+  --mat-sys-background: rgb(26 17 16);
+  --mat-sys-on-background: rgb(241 222 220);
+  --mat-sys-surface: rgb(26 17 16);
+  --mat-sys-on-surface: rgb(241 222 220);
+  --mat-sys-surface-variant: rgb(86 66 64);
+  --mat-sys-on-surface-variant: rgb(220 192 189);
+  --mat-sys-outline: rgb(164 139 137);
+  --mat-sys-outline-variant: rgb(86 66 64);
+  --mat-sys-shadow: rgb(0 0 0);
+  --mat-sys-scrim: rgb(0 0 0);
+  --mat-sys-inverse-surface: rgb(241 222 220);
+  --mat-sys-inverse-on-surface: rgb(57 46 45);
+  --mat-sys-inverse-primary: rgb(160 63 59);
+  --mat-sys-primary-fixed: rgb(255 218 215);
+  --mat-sys-on-primary-fixed: rgb(65 0 4);
+  --mat-sys-primary-fixed-dim: rgb(255 179 173);
+  --mat-sys-on-primary-fixed-variant: rgb(128 39 37);
+  --mat-sys-secondary-fixed: rgb(255 218 215);
+  --mat-sys-on-secondary-fixed: rgb(52 16 14);
+  --mat-sys-secondary-fixed-dim: rgb(248 182 177);
+  --mat-sys-on-secondary-fixed-variant: rgb(104 58 54);
+  --mat-sys-tertiary-fixed: rgb(255 221 183);
+  --mat-sys-on-tertiary-fixed: rgb(42 23 0);
+  --mat-sys-tertiary-fixed-dim: rgb(231 192 147);
+  --mat-sys-on-tertiary-fixed-variant: rgb(92 66 31);
+  --mat-sys-surface-dim: rgb(26 17 16);
+  --mat-sys-surface-bright: rgb(66 54 53);
+  --mat-sys-surface-container-lowest: rgb(21 12 11);
+  --mat-sys-surface-container-low: rgb(35 25 24);
+  --mat-sys-surface-container: rgb(39 29 28);
+  --mat-sys-surface-container-high: rgb(50 39 38);
+  --mat-sys-surface-container-highest: rgb(62 50 49);
+}
+
+html {
+  @include mat.all-component-themes($custom-theme);
+  @include mat.system-level-colors($custom-theme);
 }
 
 html,
@@ -18,6 +133,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--mat-sys-surface);
 }
 
 .container {
