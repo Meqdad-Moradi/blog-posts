@@ -13,10 +13,23 @@
     <a [routerLink]="['/blog']">Blog</a>
     <a [routerLink]="['contact']">Contact</a>
     <!-- toggle theme -->
-    <button class="!text-gray-100" mat-icon-button (click)="toggleTheme()">
-      <mat-icon>{{
-        currentTheme() !== "light" ? "light_mode" : "dark_mode"
-      }}</mat-icon>
+    <button class="!text-gray-100" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>{{ iconName() }}</mat-icon>
     </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="setTheme('light')">
+        <mat-icon>light_mode</mat-icon>
+        <span>Bright Mode</span>
+      </button>
+      <button mat-menu-item (click)="setTheme('dark')">
+        <mat-icon>dark_mode</mat-icon>
+        <span>Dark Mode</span>
+      </button>
+      <button mat-menu-item (click)="setTheme('system')">
+        <mat-icon>devices</mat-icon>
+        <span>System Mode</span>
+      </button>
+    </mat-menu>
   </div>
 </nav>

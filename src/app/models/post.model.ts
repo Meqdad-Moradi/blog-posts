@@ -5,6 +5,7 @@ export interface Post {
   content: string;
   authorId: number;
   publishDate: string;
+  image: string;
   tags: string[];
   comments: Comment[];
 }

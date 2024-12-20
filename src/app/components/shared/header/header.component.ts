@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShowcaseComponent } from '../../apps/showcase/showcase.component';
+import { ShowcaseComponent } from '../showcase/showcase.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({

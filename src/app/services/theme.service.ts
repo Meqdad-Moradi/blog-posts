@@ -17,40 +17,34 @@ export class ThemeService {
    * handleSystemThemeChange
    */
   private handleSystemThemeChange(): void {
-    // get system theme preference (dark or light)
-    const prefersDarkMode = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-
-    if (prefersDarkMode) {
-      this.storTheme('dark');
-    }
-
-    // get current theme from local storage
     const theme = this.getTheme();
     this.setTheme(theme);
-  }
-
-  /**
-   * toggleTheme
-   */
-  public toggleTheme(): void {
-    this.setTheme(this.currentTheme() === 'light' ? 'dark' : 'light');
   }
 
   /**
    * setTheme theme
    * @param theme Theme
    */
-  private setTheme(theme: Theme): void {
-    if (theme === 'dark') {
-      this.document.documentElement.classList.add('dark');
-    } else {
-      this.document.documentElement.classList.remove('dark');
-    }
-    // set current theme
-    this.currentTheme.set(theme);
+  public setTheme(theme: Theme): void {
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+    const currentMode =
+      theme === 'system' ? (prefersDarkMode ? 'dark' : 'light') : theme;
+
+    this.handleDarkModeChange(currentMode);
     this.storTheme(theme);
+    this.currentTheme.set(theme);
+  }
+
+  /**
+   * handleDarkModeChange
+   * @param mode Theme
+   */
+  private handleDarkModeChange(mode: Theme): void {
+    mode === 'dark'
+      ? this.document.body.classList.add('dark')
+      : this.document.body.classList.remove('dark');
   }
 
   /**
