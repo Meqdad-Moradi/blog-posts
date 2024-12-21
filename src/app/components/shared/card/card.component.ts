@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Post } from '../../../models/post.model';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,4 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class CardComponent {
   post = input.required<Post>();
+  onClick = output<number>();
+
+  showPostDetails(id: number): void {
+    this.onClick.emit(id);
+  }
 }

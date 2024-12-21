@@ -18,4 +18,8 @@ export class BlogService {
   public getPostsSignal = toSignal(this.getPosts(), {
     initialValue: [] as Post[],
   });
+
+  public getPost(id: string): Observable<Post> {
+    return this.http.get<Post>(`${this.baseUrl}/${id}`);
+  }
 }

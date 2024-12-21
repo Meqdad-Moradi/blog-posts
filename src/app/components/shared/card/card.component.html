@@ -3,7 +3,7 @@
   <h2 class="font-bold text-xl my-4">{{ post().title }}</h2>
   <p class="line-clamp-3">{{ post().description }}</p>
 
-  <button class="mt-4" mat-button>
+  <button class="mt-4" mat-button (click)="showPostDetails(post().id)">
     <mat-icon>chevron_right</mat-icon>
     Read more...
   </button>
