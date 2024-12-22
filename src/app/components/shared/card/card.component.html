@@ -1,6 +1,6 @@
 <div class="card">
   <img src="{{ post().image }}" alt="{{ post().title }}" />
-  <h2 class="font-bold text-xl my-4">{{ post().title }}</h2>
+  <h2 class="font-bold text-xl my-4 truncate">{{ post().title }}</h2>
   <p class="line-clamp-3">{{ post().description }}</p>
 
   <button class="mt-4" mat-button (click)="showPostDetails(post().id)">
