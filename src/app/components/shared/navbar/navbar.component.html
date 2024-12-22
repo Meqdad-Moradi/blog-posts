@@ -13,7 +13,12 @@
     <a [routerLink]="['/blog']">Blog</a>
     <a [routerLink]="['contact']">Contact</a>
     <!-- toggle theme -->
-    <button class="!text-gray-100" mat-icon-button [matMenuTriggerFor]="menu">
+    <button
+      class="!text-gray-100"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      matTooltip="Appearance"
+    >
       <mat-icon>{{ iconName() }}</mat-icon>
     </button>
 

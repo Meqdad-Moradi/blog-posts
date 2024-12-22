@@ -49,3 +49,13 @@ body {
   max-width: 100%;
   padding-inline: 2em;
 }
+
+@layer utilities {
+  .showcase-wrapper {
+    @apply relative -mt-[8.8rem] min-h-[60vh];
+  }
+
+  .showcase-wrapper-home {
+    @apply relative -mt-[8.8rem] min-h-[100vh];
+  }
+}

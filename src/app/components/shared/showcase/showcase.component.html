@@ -1,8 +1,13 @@
 <section
-  class="grid place-items-center pt-28 text-gray-100 text-center relative z-[1]"
+  class="showcase container flex flex-col items-center justify-center content-center text-gray-100 text-center bg-showcase bg-no-repeat bg-cover bg-center z-[1] pt-24 absolute top-0 left-0 w-full h-full"
   [ngClass]="{ '!place-items-start pb-24': !showcase() }"
 >
-  <h1 class="font-bold text-5xl mb-10">{{ title() }}</h1>
+  <h1
+    class="font-bold text-5xl mb-10"
+    [ngClass]="{ '!mb-0 mt-14': !showcase() }"
+  >
+    {{ title() }}
+  </h1>
 
   <!-- display showcase -->
   @if(showcase()){

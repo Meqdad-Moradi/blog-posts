@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         showcase:
-          "url('https://images.pexels.com/photos/29726716/pexels-photo-29726716/free-photo-of-festive-woman-enjoying-christmas-lights-display.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+          "url('https://images.pexels.com/photos/680239/pexels-photo-680239.jpeg?auto=compress&cs=tinysrgb&w=800')",
       },
     },
   },
