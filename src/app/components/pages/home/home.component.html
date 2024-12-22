@@ -10,4 +10,48 @@
   <div class="app-list">
     <app-list></app-list>
   </div>
+
+  <!-- amoto section -->
+  <section
+    class="container grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-14 py-24"
+  >
+    <div>
+      <img
+        src="https://images.pexels.com/photos/1073567/pexels-photo-1073567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="amoto"
+      />
+    </div>
+    <div>
+      <h1 class="font-bold text-5xl mb-10">
+        I’m Foo McKenzie, a Fashion Expert and a Professional Writer
+      </h1>
+      <p class="max-w-4xl mx-auto leading-8">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus.
+      </p>
+      <button
+        class="mt-8"
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/about']"
+      >
+        Learn More
+      </button>
+    </div>
+  </section>
+
+  <!-- blog posts -->
+  <section class="app-list grid place-items-center pb-20">
+    <app-list></app-list>
+    <button
+      class="self-center"
+      mat-raised-button
+      color="primary"
+      [routerLink]="['/blog']"
+    >
+      View All
+    </button>
+  </section>
 </main>
