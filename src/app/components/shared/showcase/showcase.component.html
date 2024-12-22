@@ -1,6 +1,10 @@
 <section
-  class="showcase container flex flex-col items-center justify-center content-center text-gray-100 text-center bg-showcase bg-no-repeat bg-cover bg-center z-[1] pt-24 absolute top-0 left-0 w-full h-full"
-  [ngClass]="{ '!place-items-start pb-24': !showcase() }"
+  class="showcase container flex flex-col items-center justify-center content-center text-gray-100 text-center bg-showcases bg-no-repeat bg-cover bg-center z-[1] absolute top-0 left-0 w-full h-full"
+  [ngClass]="{
+    '!place-items-start pb-24': !showcase(),
+    'pt-24': topDistance()
+  }"
+  style="background-image: url('{{ backgroundUrl() }}');"
 >
   <h1
     class="font-bold text-5xl mb-10"
@@ -13,6 +17,8 @@
   @if(showcase()){
   <p class="text-lg max-w-4xl mx-auto leading-8">{{ showcase() }}</p>
 
-  <button class="mt-10" mat-raised-button color="primary">Browse Posts</button>
+  <button class="mt-10" mat-raised-button color="primary">
+    {{ btnLabel() }}
+  </button>
   }
 </section>

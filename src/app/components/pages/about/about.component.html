@@ -2,3 +2,86 @@
   <app-showcase title="About Me"></app-showcase>
 </div>
 
+<!-- about me -->
+<section class="container py-24">
+  <div class="grid grid-cols-1 md:grid-cols-2 place-items-center gap-14">
+    <div>
+      <img
+        src="https://images.pexels.com/photos/5221468/pexels-photo-5221468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="me"
+      />
+    </div>
+    <div class="flex flex-col items-start justify-center">
+      <h3 class="font-bold text-xl mb-4">Biography</h3>
+      <h1 class="font-bold text-5xl mb-10">
+        A Fashion Expert Born & Raised in Afghanistan
+      </h1>
+      <p class="max-w-4xl mx-auto leading-8">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus. Nullam quis imperdiet augue. Vestibulum.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- featured On -->
+<section
+  class="container grid place-items-center bg-[#ff4d6d] py-16 text-gray-100"
+>
+  <h3 class="font-bold text-xl mb-14">Featured On</h3>
+  <div class="flex items-center justify-between gap-24">
+    <img src="img/Group-1.png" alt="featured on" />
+    <img src="img/Group-6.png" alt="featured on" />
+    <img src="img/Group-1.png" alt="featured on" />
+    <img src="img/Group-6.png" alt="featured on" />
+  </div>
+</section>
+
+<!-- My Story -->
+<section class="container py-24">
+  <div class="grid grid-cols-1 md:grid-cols-2 place-items-center gap-14">
+    <div>
+      <h3 class="font-bold text-xl mb-4">My Story</h3>
+      <h1 class="font-bold text-5xl mb-10">
+        From Fashion Faux Pas to Fabulous
+      </h1>
+    </div>
+    <!-- story -->
+    <div class="grid gap-8">
+      <p class="max-w-4xl mx-auto leading-8">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus. Nullam quis imperdiet augue. Vestibulum.
+      </p>
+      <p class="max-w-4xl mx-auto leading-8">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
+        Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
+        mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
+        tellus. Nullam quis imperdiet augue. Vestibulum.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- me -->
+<section class="container">
+  <img
+    class="w-full max-h-[100vh] object-cover"
+    src="https://images.pexels.com/photos/2747255/pexels-photo-2747255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    alt="me"
+  />
+</section>
+
+<!-- showcase -->
+<section class="container showcase-wrapper !min-h-[80vh] !mt-24">
+  <app-showcase
+    title="Let’s Collaborate"
+    showcase="Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae."
+    btnLabel="Contact Me"
+    backgroundUrl="https://images.pexels.com/photos/1128212/pexels-photo-1128212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    [topDistance]="false"
+  ></app-showcase>
+</section>

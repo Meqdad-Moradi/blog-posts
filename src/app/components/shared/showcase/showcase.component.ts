@@ -11,4 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 export class ShowcaseComponent {
   public title = input<string>('');
   public showcase = input<string>('');
+  public btnLabel = input<string>('');
+  public topDistance = input<boolean>(true);
+  public backgroundUrl = input<string>(
+    'https://images.pexels.com/photos/680239/pexels-photo-680239.jpeg?auto=compress&cs=tinysrgb&w=800'
+  );
 }
