@@ -1,11 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ThemeService } from '../../../services/theme.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { Theme } from '../../../models/theme.model';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterLink } from '@angular/router';
+import { Theme } from '../../../models/theme.model';
+import { ThemeService } from '../../../services/theme.service';
+import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatMenuModule,
     MatTooltipModule,
+    LogoComponent,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
