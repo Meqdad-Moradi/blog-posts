@@ -59,3 +59,7 @@ body {
     @apply relative -mt-[8.8rem] min-h-[100vh];
   }
 }
+
+.mdc-notched-outline__notch {
+  border-right: none;
+}
