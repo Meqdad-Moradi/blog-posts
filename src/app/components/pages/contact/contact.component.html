@@ -6,29 +6,60 @@
 <section class="container py-24">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
     <div class="flex flex-col">
-      <h3 class="font-bold text-xl mb-4">Contact Me</h3>
       <h1 class="font-bold text-5xl mb-10">Let’s Get In Touch</h1>
       <p class="max-w-4xl">
         Feel free to contact me through any of the following methods.
       </p>
 
-      <form class="flex flex-col mt-8">
+      <form
+        class="flex flex-col mt-8 gap-4"
+        [formGroup]="contactForm"
+        (submit)="onSubmit($event)"
+      >
+        <!-- Name -->
         <mat-form-field class="w-full" appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput type="text" name="name" />
+          <input matInput type="text" formControlName="name" />
+          @if (contactForm.controls.name.errors?.['required']) {
+          <mat-error>Name is required</mat-error>
+          }
         </mat-form-field>
 
+        <!-- Email -->
         <mat-form-field class="w-full" appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput type="email" name="email" />
+          <input matInput type="email" formControlName="email" />
+
+          <!-- displaying error message -->
+          @if (contactForm.controls.email.errors?.['required']) {
+          <mat-error>Email is required</mat-error>
+          } @if(contactForm.controls.email.errors?.['errMsg']){
+          <mat-error>
+            {{contactForm.controls.email.errors?.['errMsg']}}
+          </mat-error>
+          }
         </mat-form-field>
 
+        <!-- Message -->
         <mat-form-field class="w-full" appearance="outline">
           <mat-label>Message</mat-label>
-          <textarea name="message" id="message" matInput rows="5"></textarea>
+          <textarea
+            matInput
+            formControlName="message"
+            id="message"
+            rows="5"
+          ></textarea>
+          @if (contactForm.controls.message.errors?.['required']) {
+          <mat-error>Message is required</mat-error>
+          }
         </mat-form-field>
 
-        <button class="self-start" mat-raised-button color="primary">
+        <button
+          class="self-start"
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
           Send Message
         </button>
       </form>
@@ -36,9 +67,62 @@
 
     <div>
       <img
-        src="https://images.pexels.com/photos/13048816/pexels-photo-13048816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        src="https://images.pexels.com/photos/29891066/pexels-photo-29891066/free-photo-of-elegant-woman-in-traditional-dress-with-hand-fan.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="me"
       />
     </div>
   </div>
+
+  <!-- fllow me on instagram -->
+
+  <!-- <h1 class="font-bold text-5xl mb-10 mt-20 text-center">
+    Follow me on Instagram
+  </h1>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-14">
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/1006073/pexels-photo-1006073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/3768892/pexels-photo-3768892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/769036/pexels-photo-769036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/4045604/pexels-photo-4045604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/160441/girl-lake-dress-white-160441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/14178629/pexels-photo-14178629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/8530222/pexels-photo-8530222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/9052189/pexels-photo-9052189.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+    <img
+      class="aspect-square object-cover"
+      src="https://images.pexels.com/photos/769036/pexels-photo-769036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="me"
+    />
+  </div> -->
 </section>

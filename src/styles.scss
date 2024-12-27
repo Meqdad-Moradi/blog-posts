@@ -60,6 +60,12 @@ body {
   }
 }
 
+// angular material (mdc) styles
 .mdc-notched-outline__notch {
   border-right: none;
+}
+
+.mat-mdc-form-field-hint-wrapper,
+.mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
 }
