@@ -1,35 +1,67 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { DatePipe } from '@angular/common';
+import { Component, inject, OnDestroy, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 import { Post } from '../../../models/post.model';
 import { BlogService } from '../../../services/blog.service';
-import { DatePipe } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-details',
-  imports: [DatePipe],
+  imports: [DatePipe, MatIconModule, MatButtonModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
-export class DetailsComponent implements OnInit, OnDestroy {
-  private readonly activatedRoute = inject(ActivatedRoute);
+export class DetailsComponent implements OnDestroy {
   private readonly blogService = inject(BlogService);
-  private subscription!: Subscription;
+  private readonly router = inject(Router);
+  private id!: number;
+  private subscription: Subscription[] = [];
 
-  public post!: Post;
+  public post = signal<Post | null>(null);
 
-  ngOnInit(): void {
-    const postId = this.activatedRoute.snapshot.queryParamMap.get('id');
-    this.getPost(postId!);
+  constructor() {
+    this.post.set(this.router.getCurrentNavigation()?.extras?.state as Post);
+  }
+
+  /**
+   * fetch previous post
+   */
+  public fetchPrevPost(e: Event): void {
+    e.stopPropagation();
+    this.id = +this.post()!.id - 1;
+
+    if (this.id === 0) {
+      this.id = this.blogService.countPosts();
+    }
+
+    this.subscription.push(
+      this.blogService.getPost(this.id).subscribe((res) => {
+        this.post.set(res);
+      })
+    );
+  }
+
+  /**
+   * fetch next post
+   */
+  public fetchNextPost(e: Event): void {
+    e.stopPropagation();
+
+    this.id = +this.post()?.id! + 1;
+    if (+this.post()?.id! === this.blogService.countPosts()) {
+      this.id = 1;
+    }
+
+    this.subscription.push(
+      this.blogService.getPost(this.id).subscribe((res) => {
+        this.post.set(res);
+      })
+    );
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-  private getPost(id: string): void {
-    this.subscription = this.blogService
-      .getPost(id)
-      .subscribe((post) => (this.post = post));
+    this.subscription.forEach((sub) => sub.unsubscribe());
   }
 }

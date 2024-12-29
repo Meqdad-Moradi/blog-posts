@@ -1,14 +1,14 @@
 <nav class="relative z-[2] flex items-center justify-between">
   <app-logo></app-logo>
 
-  <div class="flex items-center gap-8 text-gray-100">
+  <div class="flex items-center gap-8 white">
     <a [routerLink]="['']">Home</a>
     <a [routerLink]="['/about']">About</a>
     <a [routerLink]="['/blog']">Blog</a>
     <a [routerLink]="['contact']">Contact</a>
     <!-- toggle theme -->
     <button
-      class="!text-gray-100"
+      class="white"
       mat-icon-button
       [matMenuTriggerFor]="menu"
       matTooltip="Appearance"

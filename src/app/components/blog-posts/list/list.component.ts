@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { CardComponent } from '../../shared/card/card.component';
-import { BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
+import { BlogService } from '../../../services/blog.service';
+import { CardComponent } from '../../shared/card/card.component';
+import { Post } from '../../../models/post.model';
 
 @Component({
   selector: 'app-list',
@@ -15,8 +16,11 @@ export class ListComponent {
 
   public posts = this.blogService.getPostsSignal;
 
-  public showPostDetails(id: number): void {
-    this.router.navigate(['details'], { queryParams: { id } });
-    console.log(id);
+  /**
+   * show post details
+   * @param post Post
+   */
+  public showPostDetails(post: Post): void {
+    this.router.navigate(['/details'], { state: post });
   }
 }

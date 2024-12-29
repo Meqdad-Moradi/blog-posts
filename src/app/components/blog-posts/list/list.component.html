@@ -3,7 +3,7 @@
 
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
     @for (post of posts(); track $index) {
-    <app-card [post]="post" (onClick)="showPostDetails($event)"></app-card>
+    <app-card [post]="post" (onClick)="showPostDetails(post)"></app-card>
     }
   </div>
 </section>

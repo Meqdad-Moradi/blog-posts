@@ -26,9 +26,9 @@
     },
     {
       "id": 2,
-      "title": "A Beginner's Guide to React",
+      "title": "2025 Fashion trends summary guide",
       "description": "Learn the basics of React and how to build dynamic UIs.",
-      "content": "RESTful APIs are a popular way to build scalable and efficient web services. In this article, we’ll dive into the principles of REST, explore best practices, and create a sample API using Node.js...",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "authorId": 2,
       "publishDate": "2024-11-28T12:00:00Z",
       "image": "https://images.pexels.com/photos/18265056/pexels-photo-18265056/free-photo-of-a-woman-in-sunglasses-and-a-black-top-is-posing.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -44,9 +44,9 @@
     },
     {
       "id": 3,
-      "title": "A Beginner's Guide to React",
+      "title": "Fall Clothes to look for when shopping",
       "description": "Learn the basics of React and how to build dynamic UIs.",
-      "content": "RESTful APIs are a popular way to build scalable and efficient web services. In this article, we’ll dive into the principles of REST, explore best practices, and create a sample API using Node.js...",
+      "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "authorId": 3,
       "publishDate": "2024-11-28T12:00:00Z",
       "image": "https://images.pexels.com/photos/18030882/pexels-photo-18030882/free-photo-of-a-woman-in-white-bikini-sitting-on-rocks.jpeg?auto=compress&cs=tinysrgb&w=800",

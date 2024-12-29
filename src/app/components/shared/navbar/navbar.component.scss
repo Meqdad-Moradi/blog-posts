@@ -1,0 +1,9 @@
+.white {
+  color: var(--light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .white {
+    color: var(--dark);
+  }
+}

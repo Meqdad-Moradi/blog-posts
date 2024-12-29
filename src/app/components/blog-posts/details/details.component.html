@@ -1,12 +1,38 @@
-<section class="container grid place-items-center pb-16">
-  @if (post) {
-  <div>
-    <img src="{{ post.image }}" alt="{{ post.title }}" />
-    <h1 class="font-bold text-3xl mt-6 mb-8">{{ post.title }}</h1>
+@if (post()) {
+<section class="container heading-section grid place-items-center py-20">
+  <div class="w-full max-w-[80%] mx-auto">
+    <img
+      class="w-full aspect-square object-cover object-bottom"
+      src="{{ post()?.image }}"
+      alt=""
+    />
+    <h1 class="font-bold text-3xl mt-6 mb-8">{{ post()?.title }}</h1>
     <div>
-      <span>Leav a comment</span> /
-      <span>{{ post.publishDate | date : "dd.MM.yyyy" }}</span>
+      <span class="hover:underline" role="button">Leav a comment</span>
+      /
+      <span>{{ post()?.publishDate | date : "dd.MM.yyyy" }}</span>
     </div>
   </div>
-  }
 </section>
+
+<!-- port content -->
+<section class="max-w-[80%] mx-auto px-6 py-20">
+  <p>{{ post()?.content }}</p>
+
+  <div class="flex items-center justify-between mt-16">
+    <button mat-button (click)="fetchPrevPost($event)">
+      <mat-icon class="rotate-180">trending_flat</mat-icon>
+      Prev Post
+    </button>
+
+    <button
+      class="flex-row-reverse gap-3"
+      mat-button
+      (click)="fetchNextPost($event)"
+    >
+      Next Post
+      <mat-icon>trending_flat</mat-icon>
+    </button>
+  </div>
+</section>
+}
