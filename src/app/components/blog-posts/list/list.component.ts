@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BlogService } from '../../../services/blog.service';
 import { CardComponent } from '../../shared/card/card.component';
@@ -11,6 +11,7 @@ import { Post } from '../../../models/post.model';
   styleUrl: './list.component.scss',
 })
 export class ListComponent {
+  public title = input<string>('Featured Posts');
   private readonly blogService = inject(BlogService);
   private readonly router = inject(Router);
 
