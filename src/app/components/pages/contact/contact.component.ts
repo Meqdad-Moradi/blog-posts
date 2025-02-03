@@ -10,6 +10,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { validateEmail } from '../../../helpers/utils';
+import { instagramRecords } from '../../../models/instagram-records';
+import { MatDialog } from '@angular/material/dialog';
+import { ImagePreviewDialogComponent } from '../../dialogs/image-preview-dialog/image-preview-dialog.component';
 
 @Component({
   selector: 'app-contact',
@@ -26,6 +29,9 @@ import { validateEmail } from '../../../helpers/utils';
 })
 export class ContactComponent {
   private fb = inject(FormBuilder);
+  private readonly matDialog = inject(MatDialog);
+
+  public istagramRecords = instagramRecords;
 
   public contactForm = this.fb.group({
     name: ['', [Validators.required]],
@@ -33,10 +39,25 @@ export class ContactComponent {
     message: ['', [Validators.required]],
   });
 
-  public onSubmit(e: Event) {
+  /**
+   * onSubmit
+   * @param e Event
+   * @returns void
+   */
+  public onSubmit(e: Event): void {
     e.preventDefault();
     if (this.contactForm.invalid) return;
 
     this.contactForm.reset();
+  }
+
+  /**
+   * displayImage
+   * @param url string
+   */
+  public displayImage(url: string): void {
+    this.matDialog.open(ImagePreviewDialogComponent, {
+      data: url,
+    });
   }
 }
